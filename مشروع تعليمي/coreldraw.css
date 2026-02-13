@@ -1,0 +1,176 @@
+/*
+==================================================
+        ملف about.css المُحدَّث بتنسيق CorelDRAW
+        (تم الحفاظ على تناسق الألوان والتثبيت)
+==================================================
+*/
+
+/* 1. إعادة تعيين بسيطة وثوابت */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9; /* خلفية فاتحة */
+    color: #333;
+    direction: rtl; 
+    text-align: right;
+}
+
+/* 2. الترويسة والتنقل (Header & Navigation) - مثبتة */
+header {
+    background: #75145d; /* بنفسجي غامق */
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    /* تثبيت الشريط في الأعلى */
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #ffde5e; /* لون ذهبي للتمييز */
+}
+
+/* إظهار قائمة التنقل بشكل دائم (تجاهل كود الـ JS الخاص بالـ mouseenter/mouseleave) */
+nav ul {
+    list-style: none;
+    display: flex !important; /* لضمان ظهور الروابط دائماً */
+}
+
+nav ul li {
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* تأثير الخط السفلي المتحرك للروابط */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ffde5e;
+    transition: width 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    right: unset;
+}
+
+/* 3. الأقسام الرئيسية (Main Content) */
+main {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* تنسيق بطاقات المحتوى التعليمي */
+section {
+    background: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-right: 5px solid #df88cc; /* خط جانبي تزييني باللون الوردي */
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.01); /* تكبير طفيف عند التمرير */
+}
+
+section h2 {
+    font-size: 2.2rem;
+    color: #8d0947; /* لون بنفسجي غامق للعناوين */
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-top: 15px;
+}
+
+/* تنسيق القوائم النقطية والرقمية */
+section ul, section ol {
+    margin-top: 15px;
+    margin-right: 25px; /* مسافة للترقيم/التنقيط */
+    padding-right: 0;
+}
+
+section ul li, section ol li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+/* تمييز النقاط باستخدام لون المنصة */
+section ul li::marker {
+    color: #df88cc;
+    font-weight: bold;
+}
+section ol li::marker {
+    font-weight: bold;
+    color: #8d0947;
+}
+
+/* 4. تنسيق الصور (Images) */
+section img {
+    max-width: 200%;
+    height: auto;
+    display: block;
+    margin: 20px auto; 
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1.5s ease-in-out;
+}
+
+/* تنسيق خاص للصور المتعددة في القسم الأخير */
+section:last-child img {
+    max-width: 48%; /* لترتيب صورتين جنباً إلى جنب */
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+section img:hover {
+    transform: rotate(10deg) scale(1.02);
+    box-shadow:0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 5. التذييل (Footer) */
+footer {
+    background: #333;
+    color: #f9f9f9;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}

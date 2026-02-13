@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+     <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>تعليم لغات الويب</title>
+    <link rel="stylesheet" href="wrb.css">
+</html>
+
+<body>
+
+    <header>
+        
+        <div class="logo">web design 💡</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="home.html">الدورات</a></li>
+                <li><a href="about.html">عنا</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>HTML</h2>
+            <img src="hrml.png" alt="HTML" />
+            <p>HTML (لغة ترميز النص الفائق) هي لغة الهيكلة الأساسية للمواقع. تستخدم لإنشاء محتوى صفحات الويب، مثل النصوص، الصور، والروابط.</p>
+        </section>
+        <section>
+            <h2>CSS</h2>
+            <img src="css.png" alt="CSS" />
+            <p>CSS (أوراق الأنماط المتتالية) تُستخدم لتنسيق مظهر صفحات الويب. تتيح لك التحكم في الألوان، الخطوط، والتخطيطات.</p>
+        </section>
+        <section>
+            <h2>JavaScript</h2>
+            <img src="js.png" alt="JavaScript" />
+            <p>JavaScript هي لغة برمجة تُستخدم لإضافة تفاعلية إلى صفحات الويب. يمكن استخدامها لإنشاء ألعاب، تطبيقات، وتحديثات ديناميكية للمحتوى.</p>
+        </section>
+    </main>
+    <script>
+    const header = document.querySelector('header');
+    const nav = document.querySelector('nav ul');
+
+    header.addEventListener('mouseenter', () => {
+      nav.style.display = 'flex';
+    });
+
+    header.addEventListener('mouseleave', () => {
+      nav.style.display = 'none';
+    });
+  </script>
+   <footer>
+        <p>&copy; 2025 المنصة التعليمية. جميع الحقوق محفوظة.</p>
+    </footer>
+ </body>
+</html>

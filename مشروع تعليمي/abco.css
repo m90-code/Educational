@@ -1,0 +1,305 @@
+/*
+==================================================
+        ملف abco.css النهائي والموحد والمصحح
+        يغطي (الترويسة، الشريط الثابت، المحتوى، صفحة "عنا"، صفحة "تواصل معنا")
+==================================================
+*/
+
+/* 1. إعادة تعيين بسيطة وثوابت */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    background-color: #f4f4f9; 
+    color: #333;
+    direction: rtl; 
+    text-align: right;
+}
+
+/* 2. الترويسة والتنقل (Header & Navigation) - مثبتة */
+header {
+    background: #75145d; /* بنفسجي غامق */
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    /* تثبيت الشريط في الأعلى */
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #ffde5e; /* لون ذهبي للتمييز */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* تأثير الخط السفلي المتحرك للروابط */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ffde5e;
+    transition: width 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    right: unset;
+}
+
+/* 3. قسم المحتوى الرئيسي (About/Contact Section) */
+main {
+    padding: 0 20px; /* إضافة وسم main في HTML للتنسيق بشكل أفضل */
+}
+
+section {
+    max-width: 800px;
+    margin: 40px auto; 
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-right: 7px solid #df88cc; 
+    transition: box-shadow 0.3s;
+}
+
+section:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* تنسيق العنوان الرئيسي */
+section h2 {
+    font-size: 2.5rem;
+    color: #8d0947; 
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f0f0f0;
+    text-align: center; 
+}
+
+/* تنسيق العناوين الفرعية (h3) - باستخدام التسطير لضمان ظهور الأحرف */
+section h3 {
+    font-size: 1.7rem;
+    color: #993d7d; 
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 5px; 
+    border-bottom: 2px solid #df88cc; 
+    position: relative;
+}
+
+/* إلغاء النجمة */
+section h3::before {
+    content: none; 
+}
+
+/* تنسيق الفقرات */
+section p {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+    padding-right: 0; 
+}
+
+/* ================================================= */
+/* 4. تنسيقات صفحة "عنا" المضافة حديثاً */
+/* ================================================= */
+
+/* تنسيق قسم المؤسس (صورة المؤسس والنص) */
+.founder-details {
+    display: flex; 
+    align-items: flex-start; 
+    gap: 30px; 
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.founder-details div {
+    /* لضمان أن النص يأخذ المساحة المتبقية */
+    flex-grow: 1; 
+}
+
+.founder-image {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 4px solid #df88cc; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    /* ضمان عدم انزلاق الصورة خارج الترويسة */
+    flex-shrink: 0; 
+}
+
+.founder-image:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+/* تنسيق قائمة المهارات */
+.skills-list {
+    list-style: none; 
+    margin-right: 0;
+    padding-right: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px;
+    margin-bottom: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.skills-list li {
+    background-color: #f9eef5; 
+    color: #75145d; 
+    padding: 8px 15px;
+    border-radius: 20px; 
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+}
+
+.skills-list li:hover {
+    background-color: #df88cc;
+    color: #fff;
+}
+
+/* تنسيق نموذج الاتصال المُصغّر */
+.contact-mini-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px; 
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s;
+    text-align: right;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #993d7d; 
+    outline: none;
+}
+
+.contact-btn {
+    background: #993d7d;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+    background: #75145d;
+}
+
+/* تنسيق خاص لتمييز البريد الإلكتروني (في صفحة التواصل) */
+section p strong {
+    display: block;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #75145d;
+    background-color: #f9eef5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px dashed #df88cc;
+    font-weight: bold;
+}
+
+
+/* 5. التذييل (Footer) */
+footer {
+    background: #333;
+    color: #f9f9f9;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 6. استجابة الأجهزة المحمولة (Media Queries) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .founder-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .founder-details div {
+        text-align: center;
+    }
+
+    .skills-list {
+        justify-content: center;
+    }
+
+    section {
+        padding: 20px;
+    }
+}

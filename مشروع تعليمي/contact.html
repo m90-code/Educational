@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة تعليمية - اتصل بنا</title>
+    <link rel="stylesheet" href="abco.css">
+    <script src="js.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">منصة التعلم 💡</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="home.html">الدورات</a></li>
+                <li><a href="about.html">عنا</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>تواصل معنا</h2>
+            <p class="intro-text">نحن هنا لمساعدتك والإجابة على استفساراتك. يرجى ملء النموذج أدناه لإرسال رسالتك مباشرة، أو استخدام قنوات التواصل الأخرى.</p>
+
+            <h3>أرسل رسالة مباشرة</h3>
+            <form action="submit_form.php" method="POST" class="contact-form">
+                <div class="input-group">
+                    <label for="name">الاسم الكريم:</label>
+                    <input type="text" id="name" name="name" required placeholder="أدخل اسمك بالكامل">
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                </div>
+                
+                <div class="input-group">
+                    <label for="subject">الموضوع:</label>
+                    <input type="text" id="subject" name="subject" required placeholder="عنوان استفسارك">
+                </div>
+                
+                <div class="input-group">
+                    <label for="message">الرسالة:</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="اكتب رسالتك هنا..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">إرسال الرسالة</button>
+            </form>
+
+            <hr class="contact-divider">
+
+            <h3>معلومات الاتصال الأخرى</h3>
+            <div class="contact-info-grid">
+                <div class="info-item">
+                    <h4>البريد الإلكتروني</h4>
+                    <p><strong>contact@yourdomain.com</strong></p>
+                    <p>للأسئلة العامة والشراكات.</p>
+                </div>
+                <div class="info-item">
+                    <h4>وسائل التواصل</h4>
+                    <div class="social-links">
+                        <a href="#" target="_blank">تويتر/X</a> |
+                        <a href="#" target="_blank">لينكد إن</a> |
+                        <a href="#" target="_blank">واتساب</a>
+                    </div>
+                    <p>للدعم الفني السريع.</p>
+                </div>
+            </div>
+            
+            <h3>موقعنا التقريبي</h3>
+            <div class="map-container">
+                <p>المنصة تعمل عبر الإنترنت بالكامل، لكن يمكنك تصفح المصادر التعليمية في أي مكان.</p>
+                
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 المنصة التعليمية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>

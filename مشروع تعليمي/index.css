@@ -1,0 +1,144 @@
+/*
+    ======================================
+    1. إعادة الضبط الأساسي والتخطيط العام
+    ======================================
+*/
+body {
+    /* الخطوط والخلفية */
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+
+    /* جعل المحتوى في المنتصف الرأسي والأفقي */
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* ارتفاع كامل للشاشة */
+    margin: 0;
+    
+    /* اتجاه الكتابة من اليمين لليسار */
+    direction: rtl; 
+    text-align: right;
+    
+    /* لتكون خلفية دوران العنصر مرئية */
+    overflow-x: hidden;
+}
+
+/*
+    ======================================
+    2. تصميم رسالة الترحيب المتحركة
+    ======================================
+*/
+.welcome-message {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ce49bc; /* لون مميز */
+    margin-bottom: 30px;
+    
+    /* الوضع الأولي للنص (مخفي وموجود في الأسفل قليلاً) */
+    opacity: 0;
+    transform: translateY(20px); 
+    
+    /* تحديد سرعة الانتقال الافتراضية (سنتجاوزها في الكلاس الخاص بالحركة) */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* الفئة التي يتم إضافتها بواسطة JavaScript لبدء الحركة */
+.welcome-message.animate-in {
+    opacity: 1; /* إظهار النص */
+    transform: translateY(0); /* تحريكه إلى مكانه الأصلي */
+}
+
+/*
+    ======================================
+    3. تصميم حاوية تسجيل الدخول
+    ======================================
+*/
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* تحديد أقصى عرض للحاوية */
+    position: relative; /* لتحديد موقع عنصر الدوران بداخله */
+    z-index: 10; /* وضعه فوق العنصر الدوار */
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #5e116d;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* لضمان أن العرض يشمل التبطين والحدود */
+    font-size: 1em;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #8a2e8d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #d41595;
+}
+
+/*
+    ======================================
+    4. العنصر الذي يدور (CSS Animation)
+    ======================================
+*/
+
+/* تعريف الدوران */
+@keyframes spin {
+    from {
+        transform: rotate(0deg); /* البدء من 0 درجة */
+    }
+    to {
+        transform: rotate(360deg); /* الدوران لـ 360 درجة */
+    }
+}
+
+.login-container::after {
+    content: '';
+    /* التصميم المرئي */
+    position: absolute;
+    top: -20px; /* تحديد الموضع (فوق الحاوية) */
+    left: -20px; 
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #772c60, #fcfcfc); /* تدرج لوني */
+    border-radius: 50%; /* شكل دائري */
+    
+    /* بدء الحركة */
+    animation: spin 3s linear infinite; /* اسم الحركة، السرعة، التكرار */
+    z-index: 5; /* وضعه خلف المحتوى */
+}

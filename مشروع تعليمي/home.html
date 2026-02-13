@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة تعليمية</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<my_name> Maryam </my_name>
+
+<body>
+
+    <header>
+        <div class="logo">منصة التعلم 💡</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="#courses">الدورات</a></li>
+                <li><a href="about.html">عنا</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <h1>مرحباً بك في رحلتك التعليمية</h1>
+            <p>اقدم لك كل ماتحتاجه من مصادر وشرح بسيط عن اساسيات كل لغة تحتاجها </p>
+            <a href="#courses" class="btn">تصفح الدورات</a>
+        </section>
+
+        <section id="courses" class="courses-section">
+            <h2>دوراتنا المميزة</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <h3>برمجة الويب</h3>
+                    <p>تعلم بناء المواقع باستخدام HTML, CSS, JavaScript.</p>
+                    <a href="web.html" class="btn-small">ابـدأ الآن</a>
+                </div>
+                
+                <div class="course-card">
+                    <h3>التصميم الجرافيكي</h3>
+                    <p>إتقان أدوات التصميم الأساسية ومبادئها.</p>
+                    <a href="coreldraw.html" class="btn-small">ابـدأ الآن</a>
+                </div>
+            </div>
+        </section>
+    </main>
+ <script>
+    const header = document.querySelector('header');
+    const nav = document.querySelector('nav ul');
+
+    header.addEventListener('mouseenter', () => {
+      nav.style.display = 'flex';
+    });
+
+    header.addEventListener('mouseleave', () => {
+      nav.style.display = 'none';
+    });
+  </script>
+    <footer>
+        <p>&copy; 2025 المنصة التعليمية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
